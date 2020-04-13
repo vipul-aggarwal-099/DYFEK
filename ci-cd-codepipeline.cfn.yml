@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: EKSWSV1
+
+Parameters:
+
+EksClusterName:
+
+Type: String
+
+Description: The name of the EKS cluster created
+
+Default: simple-jwt-api
+
+MinLength: 1
+
+MaxLength: 100
+
+ConstraintDescription: You must enter the EKS cluster name
+
+GitSourceRepo:
+
+Type: String
+
+Description: GitHub source repository - must contain a Dockerfile and buildspec.yml in the base
+
+Default: udacity_fsnd_deployment
+
+MinLength: 1
+
+MaxLength: 100
+
+ConstraintDescription: You must enter a GitHub repository name
+
+GitBranch:
+
+Type: String
+
+Default: master
+
+Description: GitHub git repository branch - change triggers a new build
+
+MinLength: 1
+
+MaxLength: 100
+
+ConstraintDescription: You must enter a GitHub repository branch name
+
+GitHubToken:
+
+Type: String
+
+NoEcho: true
+
+Description: GitHub API token - see https://github.com/blog/1509-personal-api-tokens
+
+MinLength: 3
+
+MaxLength: 100
+
+ConstraintDescription: You must enter a GitHub personal access token
+
+GitHubUser:
+
+Type: String
+
+Default: iseelotus
+
+Description: GitHub username or organization
+
+MinLength: 3
+
+MaxLength: 100
+
+ConstraintDescription: You must enter a GitHub username or organization
+
+CodeBuildDockerImage:
+
+Type: String
+
+Default: aws/codebuild/docker:17.09.0
+
+Description: Default AWS CodeBuild Docker optimized image
+
+MinLength: 3
+
+MaxLength: 100
+
+ConstraintDescription: You must enter a CodeBuild Docker image
+
+KubectlRoleName:
+
+Type: String
+
+Default: UdacityFlaskDeployCBKubectlRole
