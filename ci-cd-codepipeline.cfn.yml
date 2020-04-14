@@ -1,12 +1,11 @@
----
-AWSTemplateFormatVersion: 2010-09-09
+AWSTemplateFormatVersion: 2020-04-13
 
 Description: EKSWSV1
 
 
 Parameters:
 
-  EksClusterName:
+  EksClusterName:ac4221158732b11ea9d3a067ff875c04-967007516.eu-west-3.elb.amazonaws.com
     Type: String
     Description: The name of the EKS cluster created
     Default: simple-jwt-api
